@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include <vector>
 using namespace std;
@@ -8,4 +10,11 @@ struct KataGame {
 		int sisa_nyawa;
 		char tebakan_salah[26];
 		int jumlah_salah;
+
+		string pilihKataAcak()
+		{
+				srand(time(0));
+				int angka_acak = rand() % kata_asli.size() + 0;
+				return kata_asli[angka_acak];
+		}
 };
