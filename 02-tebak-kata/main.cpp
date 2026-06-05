@@ -8,7 +8,7 @@ void log(string msg)
 }
 int input(string msg)
 {
-		cout << msg;
+		cout << msg << "=";
 		int option;
 		cin >> option;
 		return option;
