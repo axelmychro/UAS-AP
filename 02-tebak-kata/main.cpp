@@ -13,6 +13,13 @@ int input(string msg)
 		cin >> option;
 		return option;
 }
+char tebak(string msg)
+{
+		cout << msg << "=";
+		char alfabet;
+		cin >> alfabet;
+		return alfabet;
+}
 int main()
 {
 		/*
