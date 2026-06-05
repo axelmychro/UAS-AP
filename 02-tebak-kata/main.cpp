@@ -6,6 +6,13 @@ void log(string msg)
 {
 		cout << " => " << msg << endl;
 }
+int input(string msg)
+{
+		cout << msg;
+		int option;
+		cin >> option;
+		return option;
+}
 int main()
 {
 		/*
