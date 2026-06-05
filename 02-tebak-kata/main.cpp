@@ -64,21 +64,33 @@ int main()
 		log("Sisa nyawa     : " + to_string(game.sisa_nyawa));
 
 		for (int i = 0; i < kata_rahasia.size(); ++i) {
-				log("for debug: " + kata_rahasia);
-
-				cout << "Kata: ";
-				for (int j = 0; j < kata_rahasia.size(); ++j) {
-						if (game.status_tebakan[j] == 1)
-								cout << kata_rahasia[j];
-						else
-								cout << "_";
-				}
-				cout << endl;
-
 				while (game.status_tebakan[i] == 0) {
-						if (tebak("tebak huruf ke-" + to_string(i)) ==
-							kata_rahasia[i])
+						system("clear");
+						//log("for debug: " + kata_rahasia);
+
+						log("Sisa nyawa: " + to_string(game.sisa_nyawa));
+						if (game.sisa_nyawa < 1)
+								break;
+
+						cout << "Kata: ";
+						for (int j = 0; j < kata_rahasia.size(); ++j) {
+								if (game.status_tebakan[j] == 1)
+										cout << kata_rahasia[j];
+								else
+										cout << "_";
+						}
+						cout << endl;
+
+						char huruf = tebak("tebak huruf ke-" + to_string(i));
+						if (huruf == kata_rahasia[i])
 								game.status_tebakan[i] = 1;
+						else
+								game.sisa_nyawa -= 1;
+
+						char huruf_salah =
+								game.tebakan_salah[game.jumlah_salah];
+						huruf_salah = huruf;
+						log("Tebakan terakhir: " + to_string(huruf_salah));
 				}
 		}
 
