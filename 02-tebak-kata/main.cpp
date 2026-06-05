@@ -2,6 +2,10 @@
 #include "lib_tebak_kata.h"
 using namespace std;
 
+void log(string msg)
+{
+		cout << " => " << msg << endl;
+}
 int main()
 {
 		/*
